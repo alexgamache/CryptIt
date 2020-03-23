@@ -75,7 +75,7 @@
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="404dp"
+        android:layout_width="388dp"
         android:layout_height="49dp"
         android:fontFamily="@font/josefin"
         android:gravity="center"
