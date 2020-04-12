@@ -81,8 +81,8 @@
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="405dp"
-        android:layout_height="52dp"
+        android:layout_width="365dp"
+        android:layout_height="65dp"
         android:fontFamily="@font/josefin"
         android:gravity="center"
         android:text="Using the friend dropdown, enter a string of characters into the text box below and press 'Encrypt' to securely encrypt your message and send it to your phones clipboard."
