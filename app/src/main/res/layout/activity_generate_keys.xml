@@ -50,22 +50,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.485" />
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="149dp"
-        android:layout_height="60dp"
-        android:background="@drawable/button_border"
-        android:fontFamily="@font/josefin"
-        android:text="Copy to Clipboard"
-        android:textAllCaps="false"
-        android:textColor="#ffffff"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.896"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.706" />
-
     <TextView
         android:id="@+id/textView5"
         android:layout_width="165dp"
@@ -81,21 +65,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.484" />
-
-    <TextView
-        android:id="@+id/textView7"
-        android:layout_width="165dp"
-        android:layout_height="75dp"
-        android:fontFamily="@font/josefin"
-        android:gravity="center"
-        android:text="Private Key:"
-        android:textColor="#ffffff"
-        android:textSize="29dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.138"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.711" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

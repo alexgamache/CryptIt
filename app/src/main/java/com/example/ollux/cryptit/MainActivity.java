@@ -10,6 +10,7 @@ import android.widget.Button;
 public class MainActivity extends AppCompatActivity {
     private Button encryptbutton;
     private Button decryptbutton;
+    private Button friendbutton;
     private Button generatebutton;
 
     @Override
@@ -19,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
 
         encryptbutton = (Button) findViewById(R.id.encrypt);
         decryptbutton = (Button) findViewById(R.id.decrypt);
+        friendbutton = (Button) findViewById(R.id.addFriend);
         generatebutton = (Button) findViewById(R.id.generate);
 
         encryptbutton.setOnClickListener(new View.OnClickListener() {
@@ -32,6 +34,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 openDecryptActivty();
+            }
+        });
+
+        friendbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openFriendActivty();
             }
         });
 
@@ -51,6 +60,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void openDecryptActivty() {
         Intent intent = new Intent(this, DecryptActivity.class);
+        startActivity(intent);
+    }
+
+    public void openFriendActivty() {
+        Intent intent = new Intent(this, FriendActivity.class);
         startActivity(intent);
     }
 
