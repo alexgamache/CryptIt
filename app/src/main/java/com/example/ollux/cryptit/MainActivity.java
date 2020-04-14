@@ -12,8 +12,7 @@ public class MainActivity extends AppCompatActivity {
     private Button decryptbutton;
     private Button friendbutton;
     private Button generatebutton;
-    //public RSA RSA= new RSA();
-    //public USER currUser= new USER();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,11 +50,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        /*try {
-            currUser.pair = RSA.generateKeyPair();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }*/
     }
 
     public void openEncryptActivty() {
