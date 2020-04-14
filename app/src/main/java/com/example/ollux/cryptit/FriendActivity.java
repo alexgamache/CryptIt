@@ -23,7 +23,6 @@ public class FriendActivity extends AppCompatActivity {
 
         addFriend = (Button) findViewById(R.id.addFriendButton);
         username = (EditText) findViewById(R.id.FriendName);
-        publickey = (EditText) findViewById(R.id.FriendPublicKey);
 
 
         addFriend.setOnClickListener(new View.OnClickListener() {
