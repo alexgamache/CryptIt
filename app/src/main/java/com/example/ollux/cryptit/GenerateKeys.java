@@ -9,9 +9,7 @@ import android.view.View;
 import android.widget.Button;
 
 public class GenerateKeys extends AppCompatActivity {
-    Globals globals = (Globals)getApplication();
-    USER currUser = globals.currUser;
-    RSA myRSA = globals.myRSA;
+    public USER currUser = Globals.currUser;
     Button btn = (Button) findViewById(R.id.generateKeys);
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,7 +19,7 @@ public class GenerateKeys extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 try {
-                    globals.currUser.pair = myRSA.generateKeyPair();
+                    Globals.currUser.pair = RSA.generateKeyPair();
                 } catch (Exception e) {
                     e.printStackTrace();
                 }

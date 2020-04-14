@@ -14,7 +14,6 @@ import java.security.PublicKey;
 public class DecryptActivity extends AppCompatActivity {
     Globals globals = (Globals)getApplication();
     USER currUser = globals.currUser;
-    RSA myRSA = globals.myRSA;
     String decryptedText;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +28,7 @@ public class DecryptActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String encryptText = cipherText.getText().toString();
                 try {
-                    decryptedText=myRSA.encrypt(encryptText, (PublicKey) currUser.getPair().getPrivate());
+                    decryptedText=RSA.encrypt(encryptText, (PublicKey) currUser.getPair().getPrivate());
                 } catch (Exception e) {
                     e.printStackTrace();
                 }

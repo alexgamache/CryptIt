@@ -16,7 +16,6 @@ public class EncryptActivity extends AppCompatActivity {
     //We need to know how to get key from array.
     String cipherText;
     Globals globals = (Globals)getApplication();
-    RSA myRSA = globals.myRSA;
     USER currUser = globals.currUser;
 
     PublicKey publicKey = currUser.pair.getPublic();//This needs to be pulled from array.
@@ -36,7 +35,7 @@ public class EncryptActivity extends AppCompatActivity {
                 String encryptText = et.getText().toString();
 
                 try {
-                    cipherText = myRSA.encrypt(encryptText, publicKey);// check back here jon
+                    cipherText = RSA.encrypt(encryptText, publicKey);// check back here jon
                 } catch (Exception e) {
                     e.printStackTrace();
                 }

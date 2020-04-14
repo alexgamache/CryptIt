@@ -7,11 +7,19 @@ import java.security.KeyPair;
 import java.security.PublicKey;
 
 public class Globals extends Application {
-    public RSA myRSA= new RSA();
-    public USER currUser= new USER();
-    public int  numOfFriends;
-    public PublicKey[] publicKeys = new PublicKey[25];
-    public String[] friendNames = new String [25];
+    public static USER currUser;
+
+    static {
+        try {
+            currUser = new USER();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static int  numOfFriends;
+    public static PublicKey[] publicKeys = new PublicKey[25];
+    public static String[] friendNames = new String [25];
 
     public USER getUser(){
         return this.currUser;
