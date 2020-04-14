@@ -12,10 +12,9 @@ import java.security.PublicKey;
 public class FriendActivity extends AppCompatActivity {
     Globals globals = (Globals)getApplication();
     USER currUser = globals.currUser;
-    RSA myRSA = globals.myRSA;
-    private Button addFriend;
-    private EditText username;
-    private EditText publickey;
+    Button addFriend;
+    EditText username;
+    EditText publickey;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

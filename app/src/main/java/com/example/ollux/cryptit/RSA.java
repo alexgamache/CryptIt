@@ -12,7 +12,6 @@ public class RSA {
         KeyPairGenerator generator = KeyPairGenerator.getInstance("RSA");
         generator.initialize(2048, new SecureRandom());
         KeyPair pair = generator.generateKeyPair();
-
     return pair;
 }
 
@@ -75,31 +74,6 @@ public class RSA {
         byte[] signatureBytes = Base64.getDecoder().decode(signature);
 
         return publicSignature.verify(signatureBytes);
-    }
-
-    @RequiresApi(api = Build.VERSION_CODES.O)
-    public static void main(String... argv) throws Exception {
-        //First generate a public/private key pair
-        KeyPair pair = generateKeyPair();
-        //KeyPair pair = getKeyPairFromKeyStore();
-
-        //Our secret message
-        String message = "the answer to life the universe and everything";
-
-        //Encrypt the message
-        String cipherText = encrypt(message, pair.getPublic());
-
-        //Now decrypt it
-        String decipheredMessage = decrypt(cipherText, pair.getPrivate());
-
-        System.out.println(decipheredMessage);
-
-        //Let's sign our message
-        String signature = sign("foobar", pair.getPrivate());
-
-        //Let's check the signature
-        boolean isCorrect = verify("foobar", signature, pair.getPublic());
-        System.out.println("Signature correct: " + isCorrect);
     }
 }
 

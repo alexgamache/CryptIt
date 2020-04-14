@@ -18,7 +18,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        //make listeners
 
         encryptbutton = (Button) findViewById(R.id.encrypt);
         decryptbutton = (Button) findViewById(R.id.decrypt);

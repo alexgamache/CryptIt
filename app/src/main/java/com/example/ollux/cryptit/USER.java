@@ -7,8 +7,8 @@ public class USER {
     KeyPair pair;
     String Username;
 
-    public USER(){
-
+    public USER() throws Exception {
+       // pair =RSA.generateKeyPair();
     }
     public USER(KeyPair keys,String User){
         this.pair = keys;
