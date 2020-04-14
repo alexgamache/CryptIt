@@ -39,7 +39,6 @@ public class RSA {
     public static String encrypt(String plainText, PublicKey publicKey) throws Exception {
         Cipher encryptCipher = Cipher.getInstance("RSA");
         encryptCipher.init(Cipher.ENCRYPT_MODE, publicKey);
-
         byte[] cipherText = encryptCipher.doFinal(plainText.getBytes(UTF_8));
 
         return Base64.getEncoder().encodeToString(cipherText);

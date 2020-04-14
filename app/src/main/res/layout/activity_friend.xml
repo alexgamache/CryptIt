@@ -62,7 +62,7 @@
         app:layout_constraintVertical_bias="0.421" />
 
     <EditText
-        android:id="@+id/editText3"
+        android:id="@+id/FriendName"
         android:layout_width="223dp"
         android:layout_height="39dp"
         android:background="@drawable/button_border"
@@ -82,7 +82,7 @@
         app:layout_constraintVertical_bias="0.424" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/addFriendButton"
         android:layout_width="223dp"
         android:layout_height="68dp"
         android:background="@drawable/button_border"
@@ -97,7 +97,7 @@
         app:layout_constraintVertical_bias="0.876" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/FriendPublicKey"
         android:layout_width="358dp"
         android:layout_height="125dp"
         android:background="@drawable/button_border"
