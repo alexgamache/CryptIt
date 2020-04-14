@@ -9,6 +9,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Spinner;
+import android.widget.ArrayAdapter;
 
 import java.security.PublicKey;
 
@@ -18,6 +20,7 @@ public class EncryptActivity extends AppCompatActivity {
     Globals globals = (Globals)getApplication();
     PublicKey publicKeys[] = Globals.publicKeys;
     USER currUser = globals.currUser;
+    String[] friendNames = globals.friendNames;
 
     //PublicKey publicKey = currUser.pair.getPublic();//This needs to be pulled from array.`
 
@@ -29,6 +32,13 @@ public class EncryptActivity extends AppCompatActivity {
         Button btn = (Button) findViewById(R.id.startencrypt);
         final EditText et = (EditText) findViewById(R.id.editTextEncrypt);
 
+        Spinner spinner = new Spinner(this);
+        ArrayAdapter<String> spinnerArrayAdapter = new ArrayAdapter<String>
+                (this, android.R.layout.simple_spinner_item,
+                        friendNames); //selected item will look like a spinner set from XML
+        spinnerArrayAdapter.setDropDownViewResource(android.R.layout
+                .simple_spinner_dropdown_item);
+        spinner.setAdapter(spinnerArrayAdapter);
 
         btn.setOnClickListener(new View.OnClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.O)
