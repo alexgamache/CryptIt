@@ -13,12 +13,12 @@ import android.widget.TextView;
 import java.security.PublicKey;
 
 public class EncryptActivity extends AppCompatActivity {
-    PublicKey publicKey;
     //We need to know how to get key from array.
     String cipherText;
     Globals globals = (Globals)getApplication();
     RSA myRSA = globals.myRSA;
-
+    USER currUser = globals.currUser;
+    PublicKey publicKey = currUser.pair.getPublic();//This needs to be pulled from array.
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,11 +34,13 @@ public class EncryptActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String encryptText = et.getText().toString();
                 try {
-                    cipherText = RSA.encrypt(encryptText, publicKey);// check back here jon
+                    cipherText = myRSA.encrypt(encryptText, publicKey);// check back here jon
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
+                et.setText(cipherText);
             }
+
         });
         et.setText(cipherText); // should set text field with the encrypted text.
     }
