@@ -16,11 +16,25 @@ public class Globals extends Application {
     public USER getUser(){
         return this.currUser;
     }
-
     public void setData(USER d){
         this.currUser=d;
     }
     public void setKeyPair(KeyPair d){
         this.currUser.pair=d;
+    }
+    public void addFriend(PublicKey friendKey, String friendName){
+        publicKeys[numOfFriends]= friendKey;
+        numOfFriends= numOfFriends+1;
+    }
+    public PublicKey getFriendKey (int friendNum){
+        return publicKeys[friendNum];
+    }
+    public PublicKey getFriendKey (String friendName){
+        for(int i = 0; i<numOfFriends;i++){
+            if(friendNames[i]==friendName){
+                return publicKeys[i];
+            }
+        }
+        return null;
     }
 }
