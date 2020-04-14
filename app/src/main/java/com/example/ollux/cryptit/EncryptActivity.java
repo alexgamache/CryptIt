@@ -33,6 +33,8 @@ public class EncryptActivity extends AppCompatActivity {
         final EditText et = (EditText) findViewById(R.id.editTextEncrypt);
 
         Spinner spinner = new Spinner(this);
+        spinner = (Spinner) findViewById(R.id.friendArray);
+
         ArrayAdapter<String> spinnerArrayAdapter = new ArrayAdapter<String>
                 (this, android.R.layout.simple_spinner_item,
                         friendNames); //selected item will look like a spinner set from XML
