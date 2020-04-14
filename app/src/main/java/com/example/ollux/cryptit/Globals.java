@@ -4,6 +4,7 @@ package com.example.ollux.cryptit;
 import android.app.Application;
 
 import java.security.KeyPair;
+import java.security.PrivateKey;
 import java.security.PublicKey;
 
 public class Globals extends Application {
@@ -18,7 +19,9 @@ public class Globals extends Application {
     }
 
     public static int  numOfFriends;
+    public static KeyPair keyPair[] = new KeyPair[25];
     public static PublicKey[] publicKeys = new PublicKey[25];
+    public static PrivateKey[] privateKeys = new PrivateKey[25];
     public static String[] friendNames = new String [25];
 
     public USER getUser(){
@@ -30,8 +33,9 @@ public class Globals extends Application {
     public void setKeyPair(KeyPair d){
         this.currUser.pair=d;
     }
-    public void addFriend(PublicKey friendKey, String friendName){
-        publicKeys[numOfFriends]= friendKey;
+    public void addFriend(KeyPair friendKeyPair, String friendName){
+        keyPair[numOfFriends] = friendKeyPair;
+        friendNames[numOfFriends] = friendName;
         numOfFriends= numOfFriends+1;
     }
     public PublicKey getFriendKey (int friendNum){

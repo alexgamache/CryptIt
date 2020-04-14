@@ -3,7 +3,7 @@ package com.example.ollux.cryptit;
 import java.security.Key;
 import java.security.KeyPair;
 
-public class USER {
+class USER {
     KeyPair pair;
     String Username;
 

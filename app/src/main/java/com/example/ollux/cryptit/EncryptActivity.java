@@ -16,9 +16,11 @@ public class EncryptActivity extends AppCompatActivity {
     //We need to know how to get key from array.
     String cipherText;
     Globals globals = (Globals)getApplication();
+    PublicKey publicKeys[] = Globals.publicKeys;
     USER currUser = globals.currUser;
 
-    PublicKey publicKey = currUser.pair.getPublic();//This needs to be pulled from array.
+    //PublicKey publicKey = currUser.pair.getPublic();//This needs to be pulled from array.`
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,7 +37,7 @@ public class EncryptActivity extends AppCompatActivity {
                 String encryptText = et.getText().toString();
 
                 try {
-                    cipherText = RSA.encrypt(encryptText, publicKey);// check back here jon
+                    cipherText = RSA.encrypt(encryptText, publicKeys[0]);// check back here jon!!!!!!!!
                 } catch (Exception e) {
                     e.printStackTrace();
                 }

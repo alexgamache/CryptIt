@@ -29,7 +29,11 @@ public class FriendActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                //globals.addFriend(,username.getText().toString());
+                try {
+                    globals.addFriend(RSA.generateKeyPair() , username.getText().toString());
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
                 //final String stpublickey = new PublicKey((publickey.getText()));
 
             }
