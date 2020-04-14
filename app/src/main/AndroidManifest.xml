@@ -11,6 +11,7 @@
         android:name=".Globals"
         android:theme="@style/FullscreenTheme">
         <activity android:name=".FriendActivity"></activity>
+        <activity android:name=".GenerateKeys" />
         <activity android:name=".DecryptActivity" />
         <activity android:name=".EncryptActivity" />
         <activity android:name=".MainActivity" />

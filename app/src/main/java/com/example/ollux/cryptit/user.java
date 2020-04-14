@@ -7,8 +7,9 @@ public class USER {
     KeyPair pair;
     String Username;
 
-    public USER() throws Exception {
-       // pair =RSA.generateKeyPair();
+    public USER(){
+        //pair = new KeyPair();
+        //Username = new String;
     }
     public USER(KeyPair keys,String User){
         this.pair = keys;
@@ -16,10 +17,7 @@ public class USER {
     }
     public USER(String User) throws Exception {
         this.Username = User;
-        this.pair = generateKeys();//mistake here
-    }
-    public USER(KeyPair keys) {
-        this.pair = keys;
+        this.pair = generateKeys();
     }
     public void setPair(KeyPair newPair){
         this.pair = newPair;

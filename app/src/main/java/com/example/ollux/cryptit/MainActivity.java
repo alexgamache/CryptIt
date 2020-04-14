@@ -11,6 +11,7 @@ public class MainActivity extends AppCompatActivity {
     private Button encryptbutton;
     private Button decryptbutton;
     private Button friendbutton;
+    private Button generatebutton;
 
 
     @Override
@@ -21,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
         encryptbutton = (Button) findViewById(R.id.encrypt);
         decryptbutton = (Button) findViewById(R.id.decrypt);
         friendbutton = (Button) findViewById(R.id.addFriend);
+        generatebutton = (Button) findViewById(R.id.generate);
 
         encryptbutton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -40,6 +42,12 @@ public class MainActivity extends AppCompatActivity {
                 openFriendActivty();
             }
         });
+        generatebutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                generateKeysActivty();
+            }
+        });
 
     }
 
@@ -57,4 +65,10 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, FriendActivity.class);
         startActivity(intent);
     }
+
+    public void generateKeysActivty() {
+        Intent intent = new Intent(this, GenerateKeys.class);
+        startActivity(intent);
+    }
+
 }
