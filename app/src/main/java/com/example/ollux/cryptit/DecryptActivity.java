@@ -12,7 +12,10 @@ import android.widget.EditText;
 import java.security.PublicKey;
 
 public class DecryptActivity extends AppCompatActivity {
-
+    Globals globals = (Globals)getApplication();
+    USER currUser = globals.currUser;
+    RSA myRSA = globals.myRSA;
+    String decryptedText;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,8 +28,14 @@ public class DecryptActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String encryptText = cipherText.getText().toString();
-                //RSA.decrypt();
+                try {
+                    decryptedText=myRSA.encrypt(encryptText, (PublicKey) currUser.getPair().getPrivate());
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                plainText.setText(decryptedText);
             }
+
         });
     }
 }

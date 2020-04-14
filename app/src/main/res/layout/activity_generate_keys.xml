@@ -8,7 +8,7 @@
     tools:context=".EncryptActivity">
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/generateKeys"
         android:layout_width="232dp"
         android:layout_height="91dp"
         android:background="@drawable/button_border"
