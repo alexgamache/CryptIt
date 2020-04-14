@@ -8,8 +8,7 @@ public class USER {
     String Username;
 
     public USER(){
-        //pair = new KeyPair();
-        //Username = new String;
+
     }
     public USER(KeyPair keys,String User){
         this.pair = keys;
@@ -17,7 +16,10 @@ public class USER {
     }
     public USER(String User) throws Exception {
         this.Username = User;
-        this.pair = generateKeys();
+        this.pair = generateKeys();//mistake here
+    }
+    public USER(KeyPair keys) {
+        this.pair = keys;
     }
     public void setPair(KeyPair newPair){
         this.pair = newPair;

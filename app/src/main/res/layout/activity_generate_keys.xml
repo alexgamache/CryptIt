@@ -35,7 +35,7 @@
         app:srcCompat="@drawable/logowords" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/copyPublicKey"
         android:layout_width="149dp"
         android:layout_height="60dp"
         android:background="@drawable/button_border"
