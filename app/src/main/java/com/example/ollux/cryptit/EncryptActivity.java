@@ -16,6 +16,9 @@ public class EncryptActivity extends AppCompatActivity {
     PublicKey publicKey;
     //We need to know how to get key from array.
     String cipherText;
+    Globals globals = (Globals)getApplication();
+    RSA myRSA = globals.myRSA;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

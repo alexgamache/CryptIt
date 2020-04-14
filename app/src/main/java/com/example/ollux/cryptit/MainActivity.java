@@ -12,13 +12,14 @@ public class MainActivity extends AppCompatActivity {
     private Button decryptbutton;
     private Button friendbutton;
     private Button generatebutton;
-    public RSA RSA;
-    public USER currUser;
+    //public RSA RSA= new RSA();
+    //public USER currUser= new USER();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //make listeners
 
         encryptbutton = (Button) findViewById(R.id.encrypt);
         decryptbutton = (Button) findViewById(R.id.decrypt);
@@ -31,34 +32,30 @@ public class MainActivity extends AppCompatActivity {
                 openEncryptActivty();
             }
         });
-
         decryptbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openDecryptActivty();
             }
         });
-
         friendbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openFriendActivty();
             }
         });
-
         generatebutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 generateKeysActivty();
             }
         });
-        RSA = new RSA();
-        currUser = new USER();
-        try {
+
+        /*try {
             currUser.pair = RSA.generateKeyPair();
         } catch (Exception e) {
             e.printStackTrace();
-        }
+        }*/
     }
 
     public void openEncryptActivty() {
