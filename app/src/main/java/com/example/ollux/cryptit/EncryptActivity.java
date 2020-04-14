@@ -18,6 +18,7 @@ public class EncryptActivity extends AppCompatActivity {
     Globals globals = (Globals)getApplication();
     RSA myRSA = globals.myRSA;
     USER currUser = globals.currUser;
+
     PublicKey publicKey = currUser.pair.getPublic();//This needs to be pulled from array.
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +34,7 @@ public class EncryptActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String encryptText = et.getText().toString();
+
                 try {
                     cipherText = myRSA.encrypt(encryptText, publicKey);// check back here jon
                 } catch (Exception e) {
