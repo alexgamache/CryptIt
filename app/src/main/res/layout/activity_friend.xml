@@ -22,13 +22,14 @@
         android:layout_height="49dp"
         android:fontFamily="@font/josefin"
         android:gravity="center"
-        android:text="Add a friend using their name and their public key."
+        android:text="Add a friend's name to generate keys."
         android:textColor="#ffffff"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.695"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.238" />
+        app:layout_constraintVertical_bias="0.246" />
 
     <TextView
         android:id="@+id/textView7"
@@ -72,7 +73,7 @@
         android:layout_height="68dp"
         android:background="@drawable/button_border"
         android:fontFamily="@font/josefin"
-        android:text="Enter"
+        android:text="Generate"
         android:textAllCaps="false"
         android:textColor="#ffffff"
         app:layout_constraintBottom_toBottomOf="parent"

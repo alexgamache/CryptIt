@@ -13,7 +13,7 @@
         android:layout_height="60dp"
         android:background="@drawable/button_border"
         android:fontFamily="@font/josefin"
-        android:text="Add a Friend"
+        android:text="Create User"
         android:textAllCaps="false"
         android:textColor="#ffffff"
         app:layout_constraintBottom_toBottomOf="parent"
