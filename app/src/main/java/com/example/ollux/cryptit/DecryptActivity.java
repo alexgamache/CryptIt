@@ -20,7 +20,6 @@ public class DecryptActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_decrypt);
         Button btn = (Button) findViewById(R.id.decryptButton);
-        final EditText plainText = (EditText) findViewById(R.id.plainText);
         final EditText cipherText = (EditText) findViewById(R.id.cipherText);
         btn.setOnClickListener(new View.OnClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.O)
@@ -32,7 +31,7 @@ public class DecryptActivity extends AppCompatActivity {
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-                plainText.setText(decryptedText);
+                cipherText.setText(decryptedText);
             }
 
         });
