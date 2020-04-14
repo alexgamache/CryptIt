@@ -22,7 +22,7 @@ public class Globals extends Application {
     public void setKeyPair(KeyPair d){
         this.currUser.pair=d;
     }
-    public void addFriend(PublicKey friendKey){
+    public void addFriend(PublicKey friendKey, String friendName){
         publicKeys[numOfFriends]= friendKey;
         numOfFriends= numOfFriends+1;
     }
