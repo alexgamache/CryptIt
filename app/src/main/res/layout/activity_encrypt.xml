@@ -27,6 +27,7 @@
         android:layout_height="41dp"
         android:background="@drawable/spinner_border"
         android:fontFamily="@font/josefin"
+        android:textColor="#ffffff"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.819"

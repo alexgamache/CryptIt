@@ -6,6 +6,7 @@ import android.app.Application;
 import java.security.KeyPair;
 import java.security.PrivateKey;
 import java.security.PublicKey;
+import java.util.ArrayList;
 
 public class Globals extends Application {
     public static USER currUser;
@@ -22,7 +23,7 @@ public class Globals extends Application {
     public static KeyPair keyPair[] = new KeyPair[25];
     public static PublicKey[] publicKeys = new PublicKey[25];
     public static PrivateKey[] privateKeys = new PrivateKey[25];
-    public static String[] friendNames = new String [25];
+    public static ArrayList<String> friendNames = new ArrayList<>();
 
     public USER getUser(){
         return this.currUser;
@@ -33,9 +34,9 @@ public class Globals extends Application {
     public void setKeyPair(KeyPair d){
         this.currUser.pair=d;
     }
-    public void addFriend(KeyPair friendKeyPair, String friendName){
+    public static void addFriend(KeyPair friendKeyPair, String friendName){
         keyPair[numOfFriends] = friendKeyPair;
-        friendNames[numOfFriends] = friendName;
+        friendNames.add(numOfFriends, friendName);
         numOfFriends= numOfFriends+1;
     }
     public PublicKey getFriendKey (int friendNum){
@@ -43,7 +44,7 @@ public class Globals extends Application {
     }
     public PublicKey getFriendKey (String friendName){
         for(int i = 0; i<numOfFriends;i++){
-            if(friendNames[i]==friendName){
+            if(friendNames.get(i) ==friendName){
                 return publicKeys[i];
             }
         }

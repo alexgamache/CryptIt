@@ -32,6 +32,7 @@ public class FriendActivity extends AppCompatActivity {
 
                 try {
                     globals.addFriend(RSA.generateKeyPair() , username.getText().toString());
+                    finish();
                 } catch (Exception e) {
                     e.printStackTrace();
                 }

@@ -13,6 +13,8 @@ import android.widget.Spinner;
 import android.widget.ArrayAdapter;
 
 import java.security.PublicKey;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public class EncryptActivity extends AppCompatActivity {
     //We need to know how to get key from array.
@@ -20,7 +22,7 @@ public class EncryptActivity extends AppCompatActivity {
     Globals globals = (Globals)getApplication();
     PublicKey publicKeys[] = Globals.publicKeys;
     USER currUser = globals.currUser;
-    String[] friendNames = globals.friendNames;
+    ArrayList<String> friendNames = globals.friendNames;
 
     //PublicKey publicKey = currUser.pair.getPublic();//This needs to be pulled from array.`
 
@@ -36,7 +38,7 @@ public class EncryptActivity extends AppCompatActivity {
         spinner = (Spinner) findViewById(R.id.friendArray);
 
         ArrayAdapter<String> spinnerArrayAdapter = new ArrayAdapter<String>
-                (this, android.R.layout.simple_spinner_item,
+                (this, R.layout.spinner_item,
                         friendNames); //selected item will look like a spinner set from XML
         spinnerArrayAdapter.setDropDownViewResource(android.R.layout
                 .simple_spinner_dropdown_item);
