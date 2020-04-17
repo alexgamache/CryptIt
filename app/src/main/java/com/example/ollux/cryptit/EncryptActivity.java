@@ -3,6 +3,9 @@ package com.example.ollux.cryptit;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.ClipData;
+import android.content.ClipboardManager;
+import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
@@ -32,6 +35,7 @@ public class EncryptActivity extends AppCompatActivity {
         setContentView(R.layout.activity_encrypt);
 
         Button btn = (Button) findViewById(R.id.startencrypt);
+        Button clipboardbtn = (Button) findViewById(R.id.copytoclipboard);
         final EditText et = (EditText) findViewById(R.id.editTextEncrypt);
         final Spinner spinner = (Spinner) findViewById(R.id.friendArray);
 
@@ -62,5 +66,16 @@ public class EncryptActivity extends AppCompatActivity {
 
         });
         et.setText(cipherText); // should set text field with the encrypted text.
+
+        clipboardbtn.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.O)
+            @Override
+            public void onClick(View v) {
+                ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
+                ClipData clip = ClipData.newPlainText("label", et.getText().toString());
+                clipboard.setPrimaryClip(clip);
+            }
+
+        });
     }
 }

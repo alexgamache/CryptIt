@@ -3,6 +3,9 @@ package com.example.ollux.cryptit;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.ClipData;
+import android.content.ClipboardManager;
+import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
@@ -26,6 +29,7 @@ public class DecryptActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_decrypt);
         Button btn = (Button) findViewById(R.id.decryptButton);
+        Button clipboardbtn = (Button) findViewById(R.id.copytoclipboard);
         final EditText cipherText = (EditText) findViewById(R.id.cipherText);
 
         final Spinner spinner = (Spinner) findViewById(R.id.friendArray);
@@ -50,6 +54,18 @@ public class DecryptActivity extends AppCompatActivity {
                     e.printStackTrace();
                 }
                 cipherText.setText(decryptedText);
+            }
+
+        });
+        cipherText.setText(decryptedText);
+
+        clipboardbtn.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.O)
+            @Override
+            public void onClick(View v) {
+                ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
+                ClipData clip = ClipData.newPlainText("label", cipherText.getText().toString());
+                clipboard.setPrimaryClip(clip);
             }
 
         });

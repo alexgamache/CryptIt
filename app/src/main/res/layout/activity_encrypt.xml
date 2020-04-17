@@ -7,10 +7,26 @@
     android:background="#4286f4"
     tools:context=".EncryptActivity">
 
+    <Button
+        android:id="@+id/copytoclipboard"
+        android:layout_width="173dp"
+        android:layout_height="62dp"
+        android:background="@drawable/button_border"
+        android:fontFamily="@font/josefin"
+        android:text="Copy to Clipboard"
+        android:textAllCaps="false"
+        android:textColor="#ffffff"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.903"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.883" />
+
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="109dp"
-        android:layout_height="27dp"
+        android:layout_width="349dp"
+        android:layout_height="22dp"
         android:fontFamily="@font/josefin"
         android:gravity="center"
         android:text="Text to Encrypt"
@@ -67,8 +83,8 @@
 
     <Button
         android:id="@+id/startencrypt"
-        android:layout_width="223dp"
-        android:layout_height="68dp"
+        android:layout_width="173dp"
+        android:layout_height="62dp"
         android:background="@drawable/button_border"
         android:fontFamily="@font/josefin"
         android:text="Encrypt"
@@ -76,9 +92,10 @@
         android:textColor="#ffffff"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.13"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.874" />
+        app:layout_constraintVertical_bias="0.883" />
 
     <TextView
         android:id="@+id/textView2"
@@ -86,7 +103,7 @@
         android:layout_height="65dp"
         android:fontFamily="@font/josefin"
         android:gravity="center"
-        android:text="Using the friend dropdown, enter a string of characters into the text box below and press 'Encrypt' to securely encrypt your message and send it to your phones clipboard."
+        android:text="Using the friend dropdown, enter a string of characters into the text box below and press 'Encrypt' to securely encrypt your message."
         android:textColor="#ffffff"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
