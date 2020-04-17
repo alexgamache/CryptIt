@@ -5,7 +5,7 @@
 <b>Welcome to the CryptIt Github repository!</b>
 </h1>
 <h3 align="center">
-CryptIt is an Android app that allows you to use RSA cryptosystem to encrypt and decrypt messages to send to your friends!
+CryptIt is an Android app that allows you to use the RSA cryptosystem to encrypt and decrypt messages to send to your friends!
 </h3>
 <h3 align="center">
 Simply create a user to generate a keyset to use for encryption and decryption.
