@@ -22,6 +22,8 @@ Daniel Bilan
 <p align="center">
 Alex Gamache
 </p>
+<br>
+<br>
 <sub>
 <p align="center">
 Copyright © 2020 Group G
