@@ -8,11 +8,13 @@ import android.content.ClipboardManager;
 import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import java.security.KeyPair;
 import java.security.PublicKey;
@@ -66,6 +68,10 @@ public class DecryptActivity extends AppCompatActivity {
                 ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
                 ClipData clip = ClipData.newPlainText("label", cipherText.getText().toString());
                 clipboard.setPrimaryClip(clip);
+
+                Toast toast=Toast.makeText(getApplicationContext(),"Copied Text to Clipboard",Toast.LENGTH_SHORT);
+                toast.setGravity(Gravity.CENTER_HORIZONTAL, 0,50);
+                toast.show();
             }
 
         });

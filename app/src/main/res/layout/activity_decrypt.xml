@@ -44,7 +44,7 @@
         android:layout_height="62dp"
         android:background="@drawable/button_border"
         android:fontFamily="@font/josefin"
-        android:text="Encrypt"
+        android:text="Decrypt"
         android:textAllCaps="false"
         android:textColor="#ffffff"
         app:layout_constraintBottom_toBottomOf="parent"

@@ -4,9 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import java.security.PublicKey;
 
@@ -32,6 +34,11 @@ public class FriendActivity extends AppCompatActivity {
 
                 try {
                     globals.addFriend(RSA.generateKeyPair() , username.getText().toString());
+
+                    Toast toast=Toast.makeText(getApplicationContext(),"User Created",Toast.LENGTH_SHORT);
+                    toast.setGravity(Gravity.CENTER_HORIZONTAL, 0,500);
+                    toast.show();
+
                     finish();
                 } catch (Exception e) {
                     e.printStackTrace();
