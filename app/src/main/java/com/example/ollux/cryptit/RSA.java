@@ -16,7 +16,7 @@ public class RSA {
 }
 
     public static KeyPair getKeyPairFromKeyStore() throws Exception {
-
+        //this would be for pulling keys from a secured location. probably not going to use
         InputStream ins = RSA.class.getResourceAsStream("/keystore.jks");
 
         KeyStore keyStore = KeyStore.getInstance("JCEKS");
@@ -56,7 +56,7 @@ public class RSA {
 
     @RequiresApi(api = Build.VERSION_CODES.O)
     public static String sign(String plainText, PrivateKey privateKey) throws Exception {
-        Signature privateSignature = Signature.getInstance("SHA256withRSA");
+        Signature privateSignature = Signature.getInstance("TempTestm8");
         privateSignature.initSign(privateKey);
         privateSignature.update(plainText.getBytes(UTF_8));
 
@@ -67,7 +67,7 @@ public class RSA {
 
     @RequiresApi(api = Build.VERSION_CODES.O)
     public static boolean verify(String plainText, String signature, PublicKey publicKey) throws Exception {
-        Signature publicSignature = Signature.getInstance("SHA256withRSA");
+        Signature publicSignature = Signature.getInstance("TempTestm8");
         publicSignature.initVerify(publicKey);
         publicSignature.update(plainText.getBytes(UTF_8));
 

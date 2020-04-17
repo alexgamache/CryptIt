@@ -11,13 +11,14 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 
+import java.security.KeyPair;
 import java.security.PublicKey;
 import java.util.ArrayList;
 import java.util.Arrays;
 
 public class DecryptActivity extends AppCompatActivity {
     Globals globals = (Globals)getApplication();
-    USER currUser = globals.currUser;
+    //USER currUser = globals.currUser;
     String decryptedText;
     ArrayList<String> friendNames = globals.friendNames;
     @Override
@@ -27,8 +28,7 @@ public class DecryptActivity extends AppCompatActivity {
         Button btn = (Button) findViewById(R.id.decryptButton);
         final EditText cipherText = (EditText) findViewById(R.id.cipherText);
 
-        Spinner spinner = new Spinner(this);
-        spinner = (Spinner) findViewById(R.id.friendArray);
+        final Spinner spinner = (Spinner) findViewById(R.id.friendArray);
 
         ArrayAdapter<String> spinnerArrayAdapter = new ArrayAdapter<String>
                 (this, R.layout.spinner_item,
@@ -42,8 +42,10 @@ public class DecryptActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String encryptText = cipherText.getText().toString();
+                String text = spinner.getSelectedItem().toString();
+                KeyPair tempKeys = globals.keyPairs.get(globals.friendNames.indexOf(text));
                 try {
-                    decryptedText=RSA.encrypt(encryptText, (PublicKey) currUser.getPair().getPrivate());
+                    decryptedText=RSA.decrypt(encryptText, tempKeys.getPrivate());
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
